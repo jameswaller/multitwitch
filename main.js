@@ -24,13 +24,13 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
-	if (multiTwitchLink !== "multitwitch.tv/" && !event.shiftKey)
+	if (multiTwitchLink !== "multitwitch.tv/" && !event.ctrlKey)
 	{
 		document.getElementById("multi").value = multiTwitchLink;
 		var win = window.open("http://www." + document.getElementById("multi").value, '_blank');
 		win.focus();
 	}
-	else if (event.shiftKey)
+	else if (event.ctrlKey)
 	{
 		multiTwitchLink = "multitwitch.tv/";
 		for (var i = 0; i < checkedStreams.length; i++)
