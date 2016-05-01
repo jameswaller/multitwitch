@@ -2,13 +2,13 @@
 var response;
 var streams = [];
 
-window.onload = function(){ 
+window.onload = function(){
 	init(function(){
 		login(function(){
 			console.log("Loaded init and login");
 		})
 	})
-})
+}
 
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
