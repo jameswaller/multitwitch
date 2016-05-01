@@ -12,7 +12,7 @@ document.getElementById("live").addEventListener("click", function () {
 	init(function(){
 		getLiveUsers(function(){
 			streams = response.streams;
-			element.value = "Done";
+			element.value = "Current Live Channels";
 			populatePage();
 		})
 	})
