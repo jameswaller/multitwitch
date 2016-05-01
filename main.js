@@ -3,6 +3,25 @@ var response;
 var streams = [];
 var multiTwitchLink = "multitwitch.tv/";
 
+document.getElementById("multi").addEventListener("click", function () {
+	var checkedStreams = document.getElementsByClassname('check');
+	for (var i = 0; i < checkedStreams.length; i++)
+	{
+		if (checkedStreams[i].checked)
+		{
+			if (i == checkedStreams.length - 1)
+			{
+				multiTwitchLink += checkStreams[i].parent.innerHTML;
+			}
+			else
+			{
+				multiTwitchLink += checkStreams[i].parent.innerHTML + "/";
+			}
+		}
+	}
+	document.getElementById("multi").value = multiTwitchLink;
+});
+
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
 	// Change the button to reflect processing
@@ -75,22 +94,3 @@ function populatePage()
 		document.getElementById("streams").appendChild(div);
 	}
 }
-
-document.getElementById("multi").addEventListener("click", function () {
-	var checkedStreams = document.getElementsByClassname('check');
-	for (var i = 0; i < checkedStreams.length; i++)
-	{
-		if (checkedStreams[i].checked)
-		{
-			if (i == checkedStreams.length - 1)
-			{
-				multiTwitchLink += checkStreams[i].parent.innerHTML;
-			}
-			else
-			{
-				multiTwitchLink += checkStreams[i].parent.innerHTML + "/";
-			}
-		}
-	}
-	document.getElementById("multi").value = multiTwitchLink;
-});
