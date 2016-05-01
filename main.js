@@ -32,6 +32,7 @@ document.getElementById("multi").addEventListener("click", function () {
 	}
 	else if (event.ctrlKey)
 	{
+		console.log("in control key block");
 		multiTwitchLink = "multitwitch.tv/";
 		for (var i = 0; i < checkedStreams.length; i++)
 		{
