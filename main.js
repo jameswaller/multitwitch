@@ -5,7 +5,7 @@ var streams = [];
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
 	// Change the button to reflect processing
-	this.disabled = true;
+	//this.disabled = true;
 	var element = document.getElementById("live");
 	element.value = "Getting live channels...";
 
@@ -49,6 +49,10 @@ function populatePage()
 {
 	for (var i = 0; i < streams.length; i++)
 	{
+		var current = document.getElementById("streams");
+		var new = document.createElement('DIV');
+		new.id = "streams";
+		current.parent.replaceChild(new, current);
 		var div = document.createElement('DIV');
 		div.className = "streamer";
 		var img = document.createElement('IMG');
