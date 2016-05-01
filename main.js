@@ -32,8 +32,9 @@ document.getElementById("live").addEventListener("click", function () {
 	init(function(){
 		getLiveUsers(function(){
 			streams = response.streams;
+			element.value = "Refresh Streams";
 			populatePage();
-			document.getElementbyId("multi").disabled = false;
+			document.getElementById("multi").disabled = false;
 		})
 	})
 }, false);
