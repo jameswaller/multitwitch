@@ -12,7 +12,6 @@ document.getElementById("live").addEventListener("click", function () {
 			console.log("before for loop");
 			for (var i = 0; i < response.length; i++)
 			{
-				console.log("here in callback");
 				console.log(response[i]);
 			}
 		})
@@ -40,7 +39,6 @@ function getLiveUsers(callback)
 	// Use the Twitch API
 	Twitch.api({method: 'streams/followed', params: {stream_type: 'live'}}, function(error, list) {
 		response = list;
-		console.log(here);
 		callback();
 	});
 }
