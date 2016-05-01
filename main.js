@@ -52,14 +52,18 @@ function init(callback)
 	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6', redirect_uri: 'https://jameswaller.github.io/'}, function(error, status) {
 		if (error) {
 			Twitch.login({
-				scope: ['user_read', 'channel_read'],
-			});
+				scope: ['user_read', 'channel_read']
+			}
+				callback();
+			);
 		}
 		if (!status.authenticated) {
 			// // Login to Twitch
 			Twitch.login({
-				scope: ['user_read', 'channel_read'],
-			});
+				scope: ['user_read', 'channel_read']
+			}
+				callback();
+			);
 		}
 		callback();
 	});
