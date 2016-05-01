@@ -32,10 +32,8 @@ document.getElementById("live").addEventListener("click", function () {
 	init(function(){
 		getLiveUsers(function(){
 			streams = response.streams;
-			element.value = "Make MultiTwitch Link";
-			document.getElementById("multi").id = "live"
-			element.id = "multi"
 			populatePage();
+			document.getElementbyId("multi").disabled = false;
 		})
 	})
 }, false);
