@@ -70,9 +70,9 @@ function init(callback)
 		{
 			console.log("Error is: " + error);
 		}
-		else {
+		else
+		{
 			console.log(status.authenticated);
-			}
 		}
 		callback();
 	});
