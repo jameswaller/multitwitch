@@ -49,7 +49,7 @@ document.getElementById("live").addEventListener("click", function () {
 				document.getElementById("multi").disabled = false;
 				document.getElementById("multi").value = "Make MultiTwitch Link";
 			})
-		})
+		//})
 	//})
 }, false);
 
