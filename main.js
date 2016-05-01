@@ -2,7 +2,7 @@
 var response;
 var streams = [];
 
-$(document).ready(function(){
+window.onload = function(){ 
 	init(function(){
 		login(function(){
 			console.log("Loaded init and login");
