@@ -49,7 +49,7 @@ function populatePage()
 {
 	var current = document.getElementById("streams");
 	var currentChildren = current.children;
-	while (currentChildren.length != 0 || currentChildren.length != undefined)
+	while (currentChildren.length != 0)
 	{
 		current.removeChild(currentChildren[0]);
 	}
