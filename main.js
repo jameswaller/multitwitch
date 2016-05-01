@@ -50,9 +50,11 @@ function populatePage()
 	for (var i = 0; i < streams.length; i++)
 	{
 		var current = document.getElementById("streams");
-		var newNode = document.createElement('DIV');
-		newNode.id = "streams";
-		current.parent.replaceChild(newNode, current);
+		var currentChildren = current.children;
+		for (var j = 0; j < currentChildren.length; j++)
+		{
+			current.removeChild(currentChildren[i]);
+		}
 		var div = document.createElement('DIV');
 		div.className = "streamer";
 		var img = document.createElement('IMG');
