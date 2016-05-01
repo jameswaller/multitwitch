@@ -47,14 +47,14 @@ function getLiveUsers(callback)
 
 function populatePage()
 {
-	for (var i = 0; i < streams.length; i++)
+	for (var j = 0; j < currentChildren.length; j++)
 	{
 		var current = document.getElementById("streams");
 		var currentChildren = current.children;
-		for (var j = 0; j < currentChildren.length; j++)
-		{
-			current.removeChild(currentChildren[i]);
-		}
+		current.removeChild(currentChildren[j]);
+	}
+	for (var i = 0; i < streams.length; i++)
+	{
 		var div = document.createElement('DIV');
 		div.className = "streamer";
 		var img = document.createElement('IMG');
