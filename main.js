@@ -2,13 +2,13 @@
 var response;
 var streams = [];
 
-window.onload = function(){
+$(window).load(function() {
 	init(function(){
 		login(function(){
 			console.log("Loaded init and login");
 		})
 	})
-}
+});
 
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
@@ -73,10 +73,7 @@ function init(callback)
 		{
 			console.log("Error is: " + error);
 		}
-		if (status.authenticated){
-			console.log("In status.authenticated");
-			callback();
-		}
+		callback();
 	});
 }
 
