@@ -47,7 +47,7 @@ function populatePage()
 	for (var i = 0; i < streams.length; i++)
 	{
 		var div = document.createElement('DIV');
-		div.class = "streamer";
+		div.className = "streamer";
 		var img = document.createElement('IMG');
 		img.src = streams[i].preview.medium;
 		div.appendChild(img);
