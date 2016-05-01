@@ -32,7 +32,7 @@ document.getElementById("live").addEventListener("click", function () {
 	init(function(){
 		getLiveUsers(function(){
 			streams = response.streams;
-			element.value = "Refresh Streams";
+			element.value = "Refresh Streams/Reset";
 			populatePage();
 			document.getElementById("multi").type = "button";
 			document.getElementById("multi").disabled = false;
