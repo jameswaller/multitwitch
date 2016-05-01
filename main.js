@@ -15,7 +15,7 @@ document.getElementById("live").addEventListener("click", function () {
 			streams = response.streams;
 			element.value = "Make MultiTwitch Link";
 			var child = document.getElementById("multi");
-			var parent = child.parent;
+			var parent = child.parentNode;
 			parent.removeChild(child);
 			element.id = "multi"
 			populatePage();
