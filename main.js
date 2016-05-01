@@ -4,7 +4,7 @@ var streams = [];
 var multiTwitchLink = "multitwitch.tv/";
 
 document.getElementById("multi").addEventListener("click", function () {
-	var checkedStreams = document.getElementsByClassname('check');
+	var checkedStreams = document.getElementsByClassName('check');
 	for (var i = 0; i < checkedStreams.length; i++)
 	{
 		if (checkedStreams[i].checked)
@@ -34,6 +34,7 @@ document.getElementById("live").addEventListener("click", function () {
 			streams = response.streams;
 			element.value = "Refresh Streams";
 			populatePage();
+			document.getElementById("multi").type = "button";
 			document.getElementById("multi").disabled = false;
 		})
 	})
