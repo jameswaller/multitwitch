@@ -23,7 +23,9 @@ function init(callback)
 	// Initialize the Twitch SDK
 	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6'}, function(error, status) {
 		if (error) {
-			console.log(error);
+			Twitch.login({
+				scope: ['user_read', 'channel_read'],
+			});
 		}
 		if (!status.authenticated) {
 			// // Login to Twitch
