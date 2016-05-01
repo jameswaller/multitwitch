@@ -61,6 +61,7 @@ function login(callback)
 	Twitch.login({
 	scope: ['user_read', 'channel_read']
 	});
+	console.log("In login");
 	callback();
 }
 
@@ -73,6 +74,7 @@ function init(callback)
 			console.log("Error is: " + error);
 		}
 		if (status.authenticated){
+			console.log("In status.authenticated");
 			callback();
 		}
 	});
