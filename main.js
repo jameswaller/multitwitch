@@ -15,11 +15,10 @@ document.getElementById("live").addEventListener("click", function () {
 	// // Login to Twitch
 	Twitch.login({
 		scope: ['user_read', 'channel_read'],
-	}
+	});
 
 	// Use the Twitch API
 	Twitch.api({method: 'streams'}, function(error, list) {
   	console.log(list);
 	});
-);
 }, false);
