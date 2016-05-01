@@ -53,6 +53,7 @@ function populatePage()
 	for (var j = 0; j < currentChildren.length; j++)
 	{
 		current.removeChild(currentChildren[j]);
+		console.log("removing " + currentChildren[j].channel.name);
 	}
 	for (var i = 0; i < streams.length; i++)
 	{
