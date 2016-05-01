@@ -5,6 +5,7 @@ var streams = [];
 $(document).ready(function(){
 	init(function(){
 		login(function(){
+			console.log("Loaded init and login");
 		})
 	})
 })
