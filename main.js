@@ -5,6 +5,7 @@ var streams = [];
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
 	// Change the button to reflect processing
+	this.disabled = true;
 	var element = document.getElementById("live");
 	element.value = "Getting live channels...";
 
