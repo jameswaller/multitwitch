@@ -18,7 +18,7 @@ document.getElementById("live").addEventListener("click", function () {
 	});
 
 	// Use the Twitch API
-	Twitch.api({method: 'streams'}, function(error, list) {
+	Twitch.api({method: 'streams/followed'}, function(error, list) {
   	console.log(list);
 	});
 }, false);
