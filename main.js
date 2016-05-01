@@ -1,5 +1,6 @@
 // Global variable for response
 var response;
+var streams = [];
 
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
@@ -9,11 +10,9 @@ document.getElementById("live").addEventListener("click", function () {
 
 	init(function(){
 		getLiveUsers(function(){
-			console.log("before for loop");
-			for (var i = 0; i < response.length; i++)
-			{
-				console.log(response[i]);
-			}
+			streams = response.streams;
+			element.value = "Done";
+			populatePage();
 		})
 	})
 }, false);
@@ -41,4 +40,17 @@ function getLiveUsers(callback)
 		response = list;
 		callback();
 	});
+}
+
+function populatePage()
+{
+	for (var i = 0; i < streams.length; i++)
+	{
+		var div = document.createElement('DIV');
+		div.class = "streamer";
+		var img = document.createElement('IMG');
+		img.src = streams[i].preview.large;
+		div.appendChild(img);
+		document.getElementById("streams").appendChild(div);
+	}
 }
