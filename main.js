@@ -36,20 +36,25 @@ document.getElementById("live").addEventListener("click", function () {
 
 	init(function(){
 		getLiveUsers(function(){
-			Twitch.login({
-			scope: ['user_read', 'channel_read']
-			});
-			
-			streams = response.streams;
-			element.value = "Refresh Streams/Reset";
-			populatePage();
-			document.getElementById("multi").type = "button";
-			document.getElementById("multi").disabled = false;
-			document.getElementById("multi").value = "Make MultiTwitch Link";
+			login(function(){
+				streams = response.streams;
+				element.value = "Refresh Streams/Reset";
+				populatePage();
+				document.getElementById("multi").type = "button";
+				document.getElementById("multi").disabled = false;
+				document.getElementById("multi").value = "Make MultiTwitch Link";
+			})
 		})
 	})
 }, false);
 
+function login(callback)
+{
+	Twitch.login({
+	scope: ['user_read', 'channel_read']
+	});
+	callback();
+}
 function init(callback)
 {
 	// Initialize the Twitch SDK
