@@ -50,13 +50,16 @@ function init(callback)
 {
 	// Initialize the Twitch SDK
 	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6', redirect_uri: 'https://jameswaller.github.io/'}, function(error, status) {
-		if (error || !status.authenticated)
+		if (error)
 		{
+			console.log("Error is: " + error);
 			Twitch.login({
 			scope: ['user_read', 'channel_read']
 			});
 		}
-		callback();
+		if (status.authenticated){
+			callback();
+		}
 	});
 }
 
