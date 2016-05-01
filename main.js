@@ -2,6 +2,14 @@
 var response;
 var streams = [];
 
+$(document).ready(function(){
+	init(function(){
+		login(function(){
+
+		})
+	}
+})
+
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
 	var multiTwitchLink = "multitwitch.tv/";
@@ -35,8 +43,8 @@ document.getElementById("live").addEventListener("click", function () {
 	element.value = "Getting live channels...";
 
 	init(function(){
-		getLiveUsers(function(){
-			login(function(){
+		login(function(){
+			getLiveUsers(function(){
 				streams = response.streams;
 				element.value = "Refresh Streams/Reset";
 				populatePage();
