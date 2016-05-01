@@ -49,7 +49,7 @@ function populatePage()
 		var div = document.createElement('DIV');
 		div.class = "streamer";
 		var img = document.createElement('IMG');
-		img.src = streams[i].preview.large;
+		img.src = streams[i].preview.medium;
 		div.appendChild(img);
 		document.getElementById("streams").appendChild(div);
 	}
