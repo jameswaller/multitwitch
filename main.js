@@ -55,7 +55,7 @@ function populatePage()
 		img.src = streams[i].preview.medium;
 		div.appendChild(img);
 		var p = document.createElement('P');
-		p.className = "plus";
+		p.className = "streamtext";
 		p.innerHTML = streams[i].channel.name;
 		div.appendChild(p);
 		document.getElementById("streams").appendChild(div);
