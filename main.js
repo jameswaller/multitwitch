@@ -7,26 +7,34 @@ document.getElementById("live").addEventListener("click", function () {
 	var element = document.getElementById("live");
 	element.value = "Getting live channels...";
 
-	// Initialize the Twitch SDK
-	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6'}, function(error, status) {
-		// the sdk is now loaded
-	});
-	//
-	// // Login to Twitch
-	Twitch.login({
-		scope: ['user_read', 'channel_read'],
-	});
-
-	getLiveUsers(function(){
-		console.log("before for loop");
-		for (var i = 0; i < response.length; i++)
-		{
-			console.log("here in callback");
-			console.log(response[i]);
-		}
+	init(function(){
+		getLiveUsers(function(){
+			console.log("before for loop");
+			for (var i = 0; i < response.length; i++)
+			{
+				console.log("here in callback");
+				console.log(response[i]);
+			}
+		})
 	})
 }, false);
 
+function init(callback)
+{
+	// Initialize the Twitch SDK
+	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6'}, function(error, status) {
+		if (error) {
+			console.log(error);
+		}
+		if (!status.authenticated) {
+			// // Login to Twitch
+			Twitch.login({
+				scope: ['user_read', 'channel_read'],
+			});
+		}
+		callback();
+	});
+}
 function getLiveUsers(callback)
 {
 	// Use the Twitch API
