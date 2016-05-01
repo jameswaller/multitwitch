@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Twitch++",
+	"description": "Easier way to make multiple Twitch windows",
+	"version": "0.1",
+  "icons": {
+    "19": "icon19.png",
+    "38": "icon38.png",
+    "128": "icon128.png"
+  },
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "icon19.png",
+			"38": "icon38.png",
+      "128": "icon128.png"
+		},
+		"default_popup": "popup.html",
+		"default_title": "Twitch++"
+	},
+	"content_security_policy":"script-src 'self' https://api.twitch.tv https://ttv-api.s3.amazonaws.com/twitch.min.js https://code.jquery.com/jquery.min.js; object-src 'self'"
+}
