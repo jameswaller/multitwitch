@@ -1,10 +1,10 @@
 // Global variable for response
 var response;
 var streams = [];
-var multiTwitchLink = "multitwitch.tv/";
 
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
+	var multiTwitchLink = "multitwitch.tv/";
 	for (var i = 0; i < checkedStreams.length; i++)
 	{
 		if (checkedStreams[i].checked)
