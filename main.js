@@ -1,6 +1,7 @@
 // Global variable for response
 var response;
 var streams = [];
+var multiTwitchLink = "multitwitch.tv/";
 
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
@@ -12,7 +13,8 @@ document.getElementById("live").addEventListener("click", function () {
 	init(function(){
 		getLiveUsers(function(){
 			streams = response.streams;
-			element.value = "Current Live Channels";
+			element.value = "Make MultiTwitch Link";
+			element.id = "multi"
 			populatePage();
 		})
 	})
@@ -72,3 +74,22 @@ function populatePage()
 		document.getElementById("streams").appendChild(div);
 	}
 }
+
+document.getElementById("multi").addEventListener("click", function () {
+	var checkedStreams = document.getElementsByClassname('check');
+	for (var i = 0; i < checkedStreams.length; i++)
+	{
+		if (checkedStreams[i].checked)
+		{
+			if (i == checkedStreams.length - 1)
+			{
+				multiTwitchLink += checkStreams[i].parent.innerHTML;
+			}
+			else
+			{
+				multiTwitchLink += checkStreams[i].parent.innerHTML + "/";
+			}
+		}
+	}
+	document.getElementById("multi").value = multiTwitchLink;
+});
