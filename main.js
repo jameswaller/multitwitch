@@ -19,6 +19,11 @@ document.getElementById("live").addEventListener("click", function () {
 
 	// Use the Twitch API
 	Twitch.api({method: 'streams/followed', params: {stream_type: 'live'}}, function(error, list) {
-  	console.log(list);
+  	response = list;
 	});
+
+	for (var i = 0; i < response.length; i++)
+	{
+		console.log(response[i]);
+	}
 }, false);
