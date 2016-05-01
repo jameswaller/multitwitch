@@ -55,7 +55,8 @@ function populatePage()
 		img.src = streams[i].preview.medium;
 		div.appendChild(img);
 		var p = document.createElement('P');
-		p.innerHTML= streams[i].channel.name;
+		p.className = "plus";
+		p.innerHTML = streams[i].channel.name;
 		div.appendChild(p);
 		document.getElementById("streams").appendChild(div);
 	}
