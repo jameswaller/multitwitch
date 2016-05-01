@@ -10,6 +10,14 @@ $(window).load(function() {
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
 	var multiTwitchLink = "multitwitch.tv/";
+	var shift = event.shiftKey;
+	if (shift)
+	{
+		for (var i = 0; i < checkedStreams.length; i++)
+		{
+			checkedStreams[i].checked = true;
+		}
+	}
 	for (var i = 0; i < checkedStreams.length; i++)
 	{
 		if (checkedStreams[i].checked)
@@ -24,7 +32,6 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
-	console.log(right);
 	if (multiTwitchLink !== "multitwitch.tv/")
 	{
 		document.getElementById("multi").value = multiTwitchLink;
