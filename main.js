@@ -7,7 +7,7 @@ $(document).ready(function(){
 		login(function(){
 
 		})
-	}
+	})
 })
 
 document.getElementById("multi").addEventListener("click", function () {
