@@ -24,11 +24,31 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
-	if (multiTwitchLink !== "multitwitch.tv/")
+	if (multiTwitchLink !== "multitwitch.tv/" && !event.shiftKey)
 	{
 		document.getElementById("multi").value = multiTwitchLink;
 		var win = window.open("http://www." + document.getElementById("multi").value, '_blank');
 		win.focus();
+	}
+	else if (event.shiftKey)
+	{
+		multiTwitchLink = "multitwitch.tv/";
+		for (var i = 0; i < checkedStreams.length; i++)
+		{
+			if (i == checkedStreams.length - 1)
+			{
+				multiTwitchLink += checkedStreams[i].parentNode.getAttribute('id');
+			}
+			else
+			{
+				multiTwitchLink += checkedStreams[i].parentNode.getAttribute('id') + "/";
+			}
+		}
+		if (multiTwitchLink !== "multitwitch.tv/"){
+			document.getElementById("multi").value = multiTwitchLink;
+			var win = window.open("http://www." + document.getElementById("multi").value, '_blank');
+			win.focus();
+		}
 	}
 });
 
