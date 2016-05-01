@@ -64,6 +64,10 @@ function populatePage()
 		var p = document.createElement('P');
 		p.className = "streamtext";
 		p.innerHTML = streams[i].channel.name;
+		var cb = document.createElement('input');
+    cb.type = 'checkbox';
+		cb.className = 'check';
+		p.appendChild(cb);
 		div.appendChild(p);
 		document.getElementById("streams").appendChild(div);
 	}
