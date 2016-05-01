@@ -17,13 +17,19 @@ document.getElementById("live").addEventListener("click", function () {
 		scope: ['user_read', 'channel_read'],
 	});
 
+	getLiveUsers(function(){
+		for (var i = 0; i < response.length; i++)
+		{
+			console.log(response[i]);
+		}
+	})
+}, false);
+
+function getLiveUsers(callback)
+{
 	// Use the Twitch API
 	Twitch.api({method: 'streams/followed', params: {stream_type: 'live'}}, function(error, list) {
-  	response = list;
+		response = list;
+		callback();
 	});
-
-	for (var i = 0; i < response.length; i++)
-	{
-		console.log(response[i]);
-	}
-}, false);
+}
