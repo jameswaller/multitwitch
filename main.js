@@ -11,11 +11,11 @@ document.getElementById("multi").addEventListener("click", function () {
 		{
 			if (i == checkedStreams.length - 1)
 			{
-				multiTwitchLink += checkedStreams[i].parent.innerHTML;
+				multiTwitchLink += checkedStreams[i].parentNode.getAttribute('id');
 			}
 			else
 			{
-				multiTwitchLink += checkedStreams[i].parent.innerHTML + "/";
+				multiTwitchLink += checkedStreams[i].parentNode.getAttribute('id') + "/";
 			}
 		}
 	}
@@ -86,6 +86,7 @@ function populatePage()
 		var p = document.createElement('P');
 		p.className = "streamtext";
 		p.innerHTML = streams[i].channel.name;
+		p.id = streams[i].channel.name;
 		var cb = document.createElement('input');
     cb.type = 'checkbox';
 		cb.className = 'check';
