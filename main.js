@@ -19,12 +19,9 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
-	if (checkedStreams.length > 0)
+	if (multiTwitchLink !== "multitwitch.tv/")
 	{
 		document.getElementById("multi").value = multiTwitchLink;
-	}
-	if (document.getElementById("multi").value !== "Make MultiTwitch Link")
-	{
 		var win = window.open("http://www." + document.getElementById("multi").value, '_blank');
 		win.focus();
 	}
