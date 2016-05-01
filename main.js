@@ -47,10 +47,10 @@ function getLiveUsers(callback)
 
 function populatePage()
 {
+	var current = document.getElementById("streams");
+	var currentChildren = current.children;
 	for (var j = 0; j < currentChildren.length; j++)
 	{
-		var current = document.getElementById("streams");
-		var currentChildren = current.children;
 		current.removeChild(currentChildren[j]);
 	}
 	for (var i = 0; i < streams.length; i++)
