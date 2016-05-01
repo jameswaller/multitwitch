@@ -36,6 +36,10 @@ document.getElementById("live").addEventListener("click", function () {
 
 	init(function(){
 		getLiveUsers(function(){
+			Twitch.login({
+			scope: ['user_read', 'channel_read']
+			});
+			
 			streams = response.streams;
 			element.value = "Refresh Streams/Reset";
 			populatePage();
@@ -53,9 +57,6 @@ function init(callback)
 		if (error)
 		{
 			console.log("Error is: " + error);
-			Twitch.login({
-			scope: ['user_read', 'channel_read']
-			});
 		}
 		if (status.authenticated){
 			callback();
