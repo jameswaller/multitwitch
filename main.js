@@ -25,6 +25,7 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
+	console.log(ctrl);
 	if (multiTwitchLink !== "multitwitch.tv/" && ctrl === false)
 	{
 		document.getElementById("multi").value = multiTwitchLink;
