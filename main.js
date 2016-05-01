@@ -3,48 +3,23 @@ var response;
 
 document.getElementById("live").addEventListener("click", function () {
 	"use strict";
-  // Change the button to reflect processing
-  var element = document.getElementById("live");
-  element.value = "Getting live channels...";
+	// Change the button to reflect processing
+	var element = document.getElementById("live");
+	element.value = "Getting live channels...";
 
-    // Initialize the Twitch SDK
-    Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6'}, function(error, status) {
-        // the sdk is now loaded
-      });
-    //
-    // // Login to Twitch
-    Twitch.login({
-        scope: ['user_read', 'channel_read'],
-      }
-    );
+	// Initialize the Twitch SDK
+	Twitch.init({clientId: '9mq34begvsxtxohax04bt7g1ifepnf6'}, function(error, status) {
+		// the sdk is now loaded
+	});
+	//
+	// // Login to Twitch
+	Twitch.login({
+		scope: ['user_read', 'channel_read'],
+	}
 
-    //var auth = gx05be5crjwo02zrtrh81c671h378s;
-
-    // Use the Twitch API
-    Twitch.api({method: 'channel'}, function(error, channel) {
-      console.log(channel.stream_key);
-    });
-
-    // // URL layout
-    // var BASE_URL = "https://api.twitch.tv/kraken/users/";
-    // var POST_URL = "/follows/channels?limit=100";
-    // var url = BASE_URL + "king_jaames" + POST_URL;
-    //
-    // post(url, function() {
-    //
-    // });
+	// Use the Twitch API
+	Twitch.api({method: 'streams'}, function(error, list) {
+  	console.log(list);
+	});
+);
 }, false);
-
-function post(url, callback)
-{
-  var request = new XMLHttpRequest();
-  request.open("GET", "https://api.twitch.tv/kraken/streams/king_jaames", true);
-  request.onreadystatechange = function () {
-    if (request.readyState === 4 && request.status === 200) {
-      response = request.response;
-      console.log(response);
-      callback();
-    }
-  };
-  request.send(null);
-}
