@@ -10,7 +10,7 @@ $(window).load(function() {
 document.getElementById("multi").addEventListener("click", function () {
 	var checkedStreams = document.getElementsByClassName('check');
 	var multiTwitchLink = "multitwitch.tv/";
-	var ctrl = event.ctrlKey;
+	var right = (event.button === 2);
 	for (var i = 0; i < checkedStreams.length; i++)
 	{
 		if (checkedStreams[i].checked)
@@ -25,14 +25,14 @@ document.getElementById("multi").addEventListener("click", function () {
 			}
 		}
 	}
-	console.log(ctrl);
-	if (multiTwitchLink !== "multitwitch.tv/" && ctrl === false)
+	console.log(right);
+	if (multiTwitchLink !== "multitwitch.tv/" && !right)
 	{
 		document.getElementById("multi").value = multiTwitchLink;
 		var win = window.open("http://www." + document.getElementById("multi").value, '_blank');
 		win.focus();
 	}
-	else if (ctrl === true)
+	else if (right)
 	{
 		console.log("in control key block");
 		multiTwitchLink = "multitwitch.tv/";
