@@ -49,11 +49,9 @@ function populatePage()
 {
 	var current = document.getElementById("streams");
 	var currentChildren = current.children;
-	console.log(currentChildren.length);
-	for (var j = 0; j < currentChildren.length; j++)
+	while (currentChildren.length != 0 || currentChildre.length != undefined)
 	{
-		current.removeChild(currentChildren[j]);
-		console.log("removing " + currentChildren[j]);
+		current.removeChild(currentChildren[0]);
 	}
 	for (var i = 0; i < streams.length; i++)
 	{
