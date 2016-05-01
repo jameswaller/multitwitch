@@ -52,6 +52,7 @@ function populatePage()
 	while (currentChildren.length != 0)
 	{
 		current.removeChild(currentChildren[0]);
+		console.log("removing node");
 	}
 	for (var i = 0; i < streams.length; i++)
 	{
