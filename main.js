@@ -40,7 +40,7 @@ document.getElementById("live").addEventListener("click", function () {
 	element.value = "Getting live channels...";
 
 	//init(function(){
-		login(function(){
+		//login(function(){
 			getLiveUsers(function(){
 				streams = response.streams;
 				element.value = "Refresh Streams/Reset";
@@ -70,9 +70,9 @@ function init(callback)
 		{
 			console.log("Error is: " + error);
 		}
-		else
+		if (status.authenticated === false)
 		{
-			console.log(status.authenticated);
+			login(function(){});
 		}
 		callback();
 	});
