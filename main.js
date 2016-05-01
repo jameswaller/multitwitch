@@ -12,6 +12,7 @@ document.getElementById("live").addEventListener("click", function () {
 		getLiveUsers(function(){
 			streams = response.streams;
 			element.value = "Done";
+			element.id = "done";
 			populatePage();
 		})
 	})
