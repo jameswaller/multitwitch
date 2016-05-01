@@ -5,7 +5,6 @@ var streams = [];
 $(document).ready(function(){
 	init(function(){
 		login(function(){
-
 		})
 	})
 })
@@ -42,8 +41,8 @@ document.getElementById("live").addEventListener("click", function () {
 	var element = document.getElementById("live");
 	element.value = "Getting live channels...";
 
-	init(function(){
-		login(function(){
+	//init(function(){
+		//login(function(){
 			getLiveUsers(function(){
 				streams = response.streams;
 				element.value = "Refresh Streams/Reset";
@@ -52,8 +51,8 @@ document.getElementById("live").addEventListener("click", function () {
 				document.getElementById("multi").disabled = false;
 				document.getElementById("multi").value = "Make MultiTwitch Link";
 			})
-		})
-	})
+		//})
+	//})
 }, false);
 
 function login(callback)
@@ -63,6 +62,7 @@ function login(callback)
 	});
 	callback();
 }
+
 function init(callback)
 {
 	// Initialize the Twitch SDK
