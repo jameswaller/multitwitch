@@ -11,11 +11,11 @@ document.getElementById("multi").addEventListener("click", function () {
 		{
 			if (i == checkedStreams.length - 1)
 			{
-				multiTwitchLink += checkStreams[i].parent.innerHTML;
+				multiTwitchLink += checkedStreams[i].parent.innerHTML;
 			}
 			else
 			{
-				multiTwitchLink += checkStreams[i].parent.innerHTML + "/";
+				multiTwitchLink += checkedStreams[i].parent.innerHTML + "/";
 			}
 		}
 	}
